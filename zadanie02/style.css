@@ -1,0 +1,245 @@
+/* Define css variables with colors */
+:root {
+    --color-primary: #DADADA;
+    --color-bg: #001;
+    --color-tertiary: #CCC;
+    --color-accent: #539ff6;
+    --color-accent-dark: #285cbf;
+    --color-text: #777;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.color-accent {
+    color: var(--color-accent);
+}
+
+.product-font {
+    font-family: "Spectral", serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+
+#header {
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+
+    /* box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 0.1); */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+
+    li {
+        display: inline-block;
+
+        .link {
+            padding: 0rem 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--color-primary);
+
+            &:hover {
+                color: var(--color-accent);
+                cursor: pointer;
+            }
+        }
+
+        .current-link {
+            color: var(--color-accent);
+            font-weight: 600;
+
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -15px;
+                left: 35px;
+                width: 6px;
+                height: 6px;
+                background: var(--color-accent);
+                border-radius: 50%;
+            }
+
+        }
+    }
+}
+
+
+#hero {
+    position: relative;
+    width: 68%;
+    height: 60vh;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    #hero-particles {
+        position: absolute;
+        top: -3rem;
+        left: -10rem;
+        width: 130%;
+        z-index: -1;
+        filter: opacity(0.2);
+    }
+
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 7rem;
+        color: var(--color-primary);
+        font-family: "Spectral", serif;
+        font-weight: 800;
+        font-style: italic;
+    }
+
+
+    h2 {
+        font-size: 3.5rem;
+
+        /* font-family: "Spectral", serif;
+        font-weight: 800;
+        font-style: italic; */
+
+        font-family: "Kode Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+
+        color: var(--color-tertiary);
+    }
+}
+
+#hero-image {
+    position: absolute;
+    right: 0;
+    width: 50rem;
+
+    /* box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1); */
+}
+
+#hero-links {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    margin-top: 2rem;
+
+    .link {
+        padding: 1rem 2rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+
+        background-color: #223;
+        border-radius: 50px;
+        color: var(--color-primary);
+        font-weight: 600;
+
+        &:hover {
+            background-color: #3f8ff6;
+            cursor: pointer;
+        }
+    }
+
+    .accent-link {
+        background-color: var(--color-accent-dark);
+    }
+}
+
+.play-button {
+    width: 1.5rem;
+    filter: invert(1);
+}
+
+.right-arrow {
+    width: 1.2rem;
+    filter: invert(1);
+}
+
+.features {
+    margin: auto;
+    margin-top: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    .feature {
+        /* text-align: justify; */
+
+        font-weight: 400;
+
+        h3 {
+            text-align: center;
+            font-size: 1.5em;
+
+            font-family: "Kode Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--color-primary);
+        }
+    }
+
+}
+
+#footer {
+    margin-top: 10rem;
+    padding: 2rem 0rem;
+    background-color: #0a0a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+}
