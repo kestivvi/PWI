@@ -1,4 +1,7 @@
-/* Define css variables with colors */
+/******************************************/
+/* GLOBAL DEFINITIONS */
+/******************************************/
+
 :root {
     --color-primary: #DADADA;
     --color-bg: #001;
@@ -6,25 +9,40 @@
     --color-accent: #539ff6;
     --color-accent-dark: #285cbf;
     --color-text: #777;
+
+    --primary-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --mono-font: "Kode Mono", monospace;
+    --product-font: "Spectral", serif;
+
+    --small-space: 8px;
+    --medium-space: 16px;
+    --large-space: 24px;
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--primary-font);
     background-color: var(--color-bg);
     color: var(--color-text);
 }
+
+/******************************************/
+/* UTILITY CLASSES */
+/******************************************/
 
 .color-accent {
     color: var(--color-accent);
 }
 
 .product-font {
-    font-family: "Spectral", serif;
+    font-family: var(--product-font);
     font-weight: 800;
     font-style: italic;
 }
 
 
+/******************************************/
+/* OTHER */
+/******************************************/
 
 #header {
     padding-top: 1rem;
@@ -39,50 +57,49 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    h2 {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--color-primary);
-    }
-
-    li {
-        display: inline-block;
-
-        .link {
-            padding: 0rem 1rem;
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--color-primary);
-
-            &:hover {
-                color: var(--color-accent);
-                cursor: pointer;
-            }
-        }
-
-        .current-link {
-            color: var(--color-accent);
-            font-weight: 600;
-
-            position: relative;
-
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: -15px;
-                left: 35px;
-                width: 6px;
-                height: 6px;
-                background: var(--color-accent);
-                border-radius: 50%;
-            }
-
-        }
-    }
 }
 
+#header .header-logo {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+#header .nav-item {
+    display: inline-block;
+}
+
+#header .nav-item .link {
+    padding: 0rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+#header .nav-item .link:hover {
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+#header .nav-item .current-link {
+    color: var(--color-accent);
+    font-weight: 600;
+
+    position: relative;
+}
+
+#header .nav-item .current-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 35px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
 
 #hero {
     position: relative;
@@ -98,49 +115,39 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+}
 
-    #hero-particles {
-        position: absolute;
-        top: -3rem;
-        left: -10rem;
-        width: 130%;
-        z-index: -1;
-        filter: opacity(0.2);
-    }
+#hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    h1 {
-        /* font-size: 5em; */
-        font-size: 5cqi;
-        color: var(--color-primary);
-        font-family: "Spectral", serif;
-        font-weight: 800;
-        font-style: italic;
-    }
+#hero h1 {
+    /* font-size: 5em; */
+    font-size: 5cqi;
+    color: var(--color-primary);
+    font-family: "Spectral", serif;
+    font-weight: 800;
+    font-style: italic;
+}
 
 
-    h2 {
-        /* font-size: 2em; */
-        font-size: 2cqi;
+#hero h2 {
+    /* font-size: 2em; */
+    font-size: 2cqi;
 
-        /* font-family: "Spectral", serif;
-        font-weight: 800;
-        font-style: italic; */
+    /* font-family: "Spectral", serif;
+    font-weight: 800;
+    font-style: italic; */
 
-        font-family: "Kode Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        font-style: normal;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 
-        color: var(--color-tertiary);
-    }
+    color: var(--color-tertiary);
 }
 
 #hero-image {
@@ -165,31 +172,31 @@ body {
     gap: 2rem;
 
     margin-top: 2rem;
+}
 
-    .link {
-        padding: 1rem 2rem;
+#hero-links .link {
+    padding: 1rem 2rem;
 
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
 
-        background-color: #223;
-        border-radius: 50px;
-        color: var(--color-primary);
-        font-weight: 600;
+    background-color: #223;
+    border-radius: 50px;
+    color: var(--color-primary);
+    font-weight: 600;
+}
 
-        &:hover {
-            background-color: #3f8ff6;
-            cursor: pointer;
-        }
-    }
+#hero-links .link:hover {
+    background-color: #3f8ff6;
+    cursor: pointer;
+}
 
-    .accent-link {
-        background-color: var(--color-accent-dark);
-    }
+#hero-links .accent-link {
+    background-color: var(--color-accent-dark);
 }
 
 .play-button {
@@ -211,25 +218,23 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     gap: 3rem;
+}
 
-    .feature {
-        /* text-align: justify; */
+.features .feature {
+    /* text-align: justify; */
 
-        font-weight: 400;
+    font-weight: 400;
+}
 
+.features .feature h3 {
+    text-align: center;
+    font-size: 1.5em;
 
-        h3 {
-            text-align: center;
-            font-size: 1.5em;
-
-            font-family: "Kode Mono", monospace;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            color: var(--color-primary);
-        }
-    }
-
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--color-primary);
 }
 
 #footer {
@@ -241,14 +246,14 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
 
-    a {
-        color: var(--color-text);
-        text-decoration: none;
-        font-weight: 600;
+#footer a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
 
-        &:hover {
-            color: var(--color-accent);
-        }
-    }
+#footer a:hover {
+    color: var(--color-accent);
 }
