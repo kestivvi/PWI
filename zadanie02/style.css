@@ -126,7 +126,8 @@ body {
 
 #hero h1 {
     /* font-size: 5em; */
-    font-size: 5cqi;
+    /* font-size: 5cqi; */
+    font-size: 5vw;
     color: var(--color-primary);
     font-family: "Spectral", serif;
     font-weight: 800;
@@ -136,14 +137,14 @@ body {
 
 #hero h2 {
     /* font-size: 2em; */
-    font-size: 2cqi;
+    /* font-size: 2cqi; */
+    font-size: 2vw;
 
     /* font-family: "Spectral", serif;
     font-weight: 800;
     font-style: italic; */
 
     font-family: "Kode Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
 
@@ -231,7 +232,6 @@ body {
     font-size: 1.5em;
 
     font-family: "Kode Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     color: var(--color-primary);
