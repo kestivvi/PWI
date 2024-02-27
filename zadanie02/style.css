@@ -86,11 +86,13 @@ body {
 
 #hero {
     position: relative;
-    width: 68%;
-    height: 60vh;
+    width: 72%;
+    /* height: 60vh; */
     margin: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
+
+    overflow: auto;
 
     display: flex;
     flex-direction: row;
@@ -115,7 +117,8 @@ body {
     }
 
     h1 {
-        font-size: 7rem;
+        /* font-size: 5em; */
+        font-size: 5cqi;
         color: var(--color-primary);
         font-family: "Spectral", serif;
         font-weight: 800;
@@ -124,7 +127,8 @@ body {
 
 
     h2 {
-        font-size: 3.5rem;
+        /* font-size: 2em; */
+        font-size: 2cqi;
 
         /* font-family: "Spectral", serif;
         font-weight: 800;
@@ -140,11 +144,15 @@ body {
 }
 
 #hero-image {
-    position: absolute;
-    right: 0;
-    width: 50rem;
+    width: 100%;
+}
 
-    /* box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1); */
+.hero-left {
+    width: 100%;
+}
+
+.hero-right {
+    width: 100%;
 }
 
 #hero-links {
@@ -197,17 +205,18 @@ body {
 .features {
     margin: auto;
     margin-top: 5rem;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
 
     .feature {
         /* text-align: justify; */
 
         font-weight: 400;
+
 
         h3 {
             text-align: center;
