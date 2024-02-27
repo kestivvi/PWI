@@ -25,6 +25,13 @@ body {
     color: var(--color-text);
 }
 
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+
 /******************************************/
 /* UTILITY CLASSES */
 /******************************************/
@@ -37,6 +44,10 @@ body {
     font-family: var(--product-font);
     font-weight: 800;
     font-style: italic;
+}
+
+.inline-block {
+    display: inline-block;
 }
 
 
@@ -64,32 +75,36 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-primary);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
 }
 
-#header .nav-item {
-    display: inline-block;
+#header .header-logo .logo {
+    width: 32px;
 }
 
-#header .nav-item .link {
+
+#header .link {
     padding: 0rem 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-primary);
 }
 
-#header .nav-item .link:hover {
+#header .link:hover {
     color: var(--color-accent);
     cursor: pointer;
 }
 
-#header .nav-item .current-link {
+#header .current-link {
     color: var(--color-accent);
     font-weight: 600;
-
     position: relative;
 }
 
-#header .nav-item .current-link::after {
+/* Dot under the active link */
+#header .current-link::after {
     content: '';
     display: block;
     position: absolute;
@@ -104,7 +119,6 @@ body {
 #hero {
     position: relative;
     width: 72%;
-    /* height: 60vh; */
     margin: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -125,24 +139,17 @@ body {
 }
 
 #hero h1 {
-    /* font-size: 5em; */
-    /* font-size: 5cqi; */
     font-size: 5vw;
     color: var(--color-primary);
     font-family: "Spectral", serif;
     font-weight: 800;
     font-style: italic;
+    padding-left: 4vw;
 }
 
 
 #hero h2 {
-    /* font-size: 2em; */
-    /* font-size: 2cqi; */
     font-size: 2vw;
-
-    /* font-family: "Spectral", serif;
-    font-weight: 800;
-    font-style: italic; */
 
     font-family: "Kode Mono", monospace;
     font-weight: 600;
