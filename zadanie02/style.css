@@ -137,6 +137,17 @@ a {
     align-items: flex-start;
 }
 
+#hero .icon {
+    width: 3vw;
+}
+
+#hero .flex-row-align-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.1vw;
+}
+
 #hero .hero-text {
     display: flex;
     flex-direction: column;
@@ -157,7 +168,9 @@ a {
 }
 
 #hero-image {
-    width: 100%;
+    width: 30vw;
+    /* Size of the image should always be 100% even if it measn upscaling */
+    /* height: auto; */
 }
 
 #hero-links {
