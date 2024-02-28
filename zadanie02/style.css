@@ -46,6 +46,12 @@ a {
     font-style: italic;
 }
 
+.mono-font {
+    font-family: var(--mono-font);
+    font-weight: 600;
+    font-style: normal;
+}
+
 .inline-block {
     display: inline-block;
 }
@@ -141,32 +147,16 @@ a {
 #hero h1 {
     font-size: 5vw;
     color: var(--color-primary);
-    font-family: "Spectral", serif;
-    font-weight: 800;
-    font-style: italic;
     padding-left: 4vw;
 }
 
 
 #hero h2 {
     font-size: 2vw;
-
-    font-family: "Kode Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
-
     color: var(--color-tertiary);
 }
 
 #hero-image {
-    width: 100%;
-}
-
-.hero-left {
-    width: 100%;
-}
-
-.hero-right {
     width: 100%;
 }
 
@@ -220,7 +210,9 @@ a {
 .features {
     margin: auto;
     margin-top: 5rem;
-    width: 50%;
+
+    width: 60%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -228,26 +220,18 @@ a {
     gap: 3rem;
 }
 
-.features .feature {
-    /* text-align: justify; */
-
-    font-weight: 400;
-}
-
-.features .feature h3 {
+.features .feature .feature-title {
     text-align: center;
     font-size: 1.5em;
-
-    font-family: "Kode Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
     color: var(--color-primary);
 }
 
 #footer {
     margin-top: 10rem;
     padding: 2rem 0rem;
+
     background-color: #0a0a1a;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
