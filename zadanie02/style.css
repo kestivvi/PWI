@@ -74,34 +74,43 @@ a:hover {
 .shadow-top {
     position: absolute;
     top: -15vh;
-    left: 0vw;
 
-    width: 99vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90vw;
     height: 200px;
     border-radius: 10%;
-    background-color: #539ff666;
+    background-color: #539ff633;
 }
 
 .shadow-1 {
     position: absolute;
-    top: 20vh;
-    right: 20vw;
+    top: 4vh;
+    right: 10vw;
 
-    width: 500px;
-    height: 500px;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
-    background-color: #539ff6;
+    background-color: #539ff6AA;
+
+    filter: blur(1000vw);
+    z-index: -10;
 }
 
 .shadow-2 {
     position: absolute;
-    top: 35vh;
-    right: 15vw;
+    bottom: 0vh;
+    right: 0vw;
 
-    width: 500px;
-    height: 500px;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
-    background-color: #285cbf;
+    background-color: #285cbfAA;
+    /* background-color: #285cbf00; */
+
+    filter: blur(1000vw);
+    z-index: -10;
 }
 
 /************************/
@@ -174,8 +183,6 @@ a:hover {
     margin: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
-
-    overflow: auto;
 
     display: flex;
     flex-direction: row;
@@ -296,7 +303,7 @@ a:hover {
     padding: 2rem 0rem;
 
     background-color: #0a0a1a;
-    box-shadow: 0px 0px 1000px 0px #539ff655;
+    box-shadow: 0px 0px 1000px 0px #539ff644;
 
     display: flex;
     flex-direction: column;
