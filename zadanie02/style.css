@@ -19,6 +19,7 @@
     --large-space: 24px;
 }
 
+
 body {
     font-family: var(--primary-font);
     background-color: var(--color-bg);
@@ -64,6 +65,44 @@ a:hover {
 /******************************************/
 /* OTHER */
 /******************************************/
+
+#bg-cover {
+    position: relative;
+    filter: blur(1000vw);
+}
+
+.shadow-top {
+    position: absolute;
+    top: -15vh;
+    left: 0vw;
+
+    width: 99vw;
+    height: 200px;
+    border-radius: 10%;
+    background-color: #539ff666;
+}
+
+.shadow-1 {
+    position: absolute;
+    top: 20vh;
+    right: 20vw;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #539ff6;
+}
+
+.shadow-2 {
+    position: absolute;
+    top: 35vh;
+    right: 15vw;
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #285cbf;
+}
 
 /************************/
 /* HEADER */
@@ -257,6 +296,7 @@ a:hover {
     padding: 2rem 0rem;
 
     background-color: #0a0a1a;
+    box-shadow: 0px 0px 1000px 0px #539ff655;
 
     display: flex;
     flex-direction: column;
