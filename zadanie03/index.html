@@ -136,8 +136,12 @@
         /////////////////////////
         // UI Management
 
-        function updateWhoIsNext(currentPlayer) {
-            document.getElementById('whose-round-message').textContent = 'It\'s ' + currentPlayer + '\'s turn';
+        function updateWhoIsNext(currentPlayer, bot) {
+            if (gameMode === 'bot' && currentPlayer === 'O') {
+                document.getElementById('whose-round-message').textContent = 'Bot is thinking...';
+            } else {
+                document.getElementById('whose-round-message').textContent = 'It\'s ' + currentPlayer + '\'s turn';
+            }
         }
 
         function showWhoIsNext() {
@@ -209,7 +213,7 @@
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                 updateWhoIsNext(currentPlayer);
                 if (gameMode === 'bot' && currentPlayer === 'O') {
-                    makeBotMove();
+                    setTimeout(makeBotMove, 100);
                 }
             }
         }
@@ -230,16 +234,15 @@
             }
             cells[move].textContent = 'O';
             if (checkWinner()) {
-                alert('O wins!');
-                resetGame();
+                endGame(false, 'O');
                 return;
             }
             if (checkDraw()) {
-                alert('It\'s a draw!');
-                resetGame();
+                endGame(true);
                 return;
             }
             currentPlayer = 'X';
+            updateWhoIsNext(currentPlayer);
         }
 
         function minimax(board, depth, isMaximizing) {
