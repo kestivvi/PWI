@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 2px;
+        }
+
+        .cell {
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board" onclick="handleClick(event)">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+    <script>
+        let currentPlayer = 'X';
+        let gameMode = 'bot'; // default game mode
+        const cells = document.querySelectorAll('.cell');
+
+        function handleClick(event) {
+            const cell = event.target;
+            const index = parseInt(cell.getAttribute('data-index'));
+            if (cell.textContent === '') {
+                cell.textContent = currentPlayer;
+                if (checkWinner()) {
+                    alert(currentPlayer + ' wins!');
+                    resetGame();
+                    return;
+                }
+                if (checkDraw()) {
+                    alert('It\'s a draw!');
+                    resetGame();
+                    return;
+                }
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                if (gameMode === 'bot' && currentPlayer === 'O') {
+                    makeBotMove();
+                }
+            }
+        }
+
+        function makeBotMove() {
+            let bestScore = -Infinity;
+            let move;
+            for (let i = 0; i < 9; i++) {
+                if (cells[i].textContent === '') {
+                    cells[i].textContent = 'O';
+                    let score = minimax(cells, 0, false);
+                    cells[i].textContent = '';
+                    if (score > bestScore) {
+                        bestScore = score;
+                        move = i;
+                    }
+                }
+            }
+            cells[move].textContent = 'O';
+            currentPlayer = 'X';
+        }
+
+        function minimax(board, depth, isMaximizing) {
+            if (checkWinner()) {
+                return isMaximizing ? -1 : 1;
+            } else if (checkDraw()) {
+                return 0;
+            }
+
+            if (isMaximizing) {
+                let bestScore = -Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (board[i].textContent === '') {
+                        board[i].textContent = 'O';
+                        let score = minimax(board, depth + 1, false);
+                        board[i].textContent = '';
+                        bestScore = Math.max(score, bestScore);
+                    }
+                }
+                return bestScore;
+            } else {
+                let bestScore = Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (board[i].textContent === '') {
+                        board[i].textContent = 'X';
+                        let score = minimax(board, depth + 1, true);
+                        board[i].textContent = '';
+                        bestScore = Math.min(score, bestScore);
+                    }
+                }
+                return bestScore;
+            }
+        }
+
+        // Rest of the code remains the same
+
+        function checkWinner() {
+            const winningCombos = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            return winningCombos.some(combo => {
+                return cells[combo[0]].textContent === currentPlayer &&
+                    cells[combo[1]].textContent === currentPlayer &&
+                    cells[combo[2]].textContent === currentPlayer;
+            });
+        }
+
+        function checkDraw() {
+            return [...cells].every(cell => cell.textContent !== '');
+        }
+
+        function resetGame() {
+            cells.forEach(cell => cell.textContent = '');
+            currentPlayer = 'X';
+        }
+    </script>
+</body>
+
+</html>
