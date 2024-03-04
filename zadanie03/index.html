@@ -202,7 +202,7 @@
             const index = parseInt(cell.getAttribute('data-index'));
             if (cell.textContent === '') {
                 cell.textContent = currentPlayer;
-                if (checkWinner()) {
+                if (checkWinner(currentPlayer, cells)) {
                     endGame(false, currentPlayer);
                     return;
                 }
@@ -224,7 +224,7 @@
             for (let i = 0; i < 9; i++) {
                 if (cells[i].textContent === '') {
                     cells[i].textContent = 'O';
-                    let score = minimax(cells, 0, false);
+                    let score = minimax(cells, 0, false, -Infinity, Infinity);
                     cells[i].textContent = '';
                     if (score > bestScore) {
                         bestScore = score;
@@ -233,7 +233,7 @@
                 }
             }
             cells[move].textContent = 'O';
-            if (checkWinner()) {
+            if (checkWinner('O', cells)) {
                 endGame(false, 'O');
                 return;
             }
@@ -245,39 +245,50 @@
             updateWhoIsNext(currentPlayer);
         }
 
-        function minimax(board, depth, isMaximizing) {
-            if (checkWinner()) {
-                return isMaximizing ? -1 : 1;
+
+
+        function minimax(board, depth, isMaximizing, alpha, beta) {
+            if (checkWinner(isMaximizing ? 'O' : 'X', board)) {
+                return isMaximizing ? -10 + depth : 10 - depth;
             } else if (checkDraw()) {
                 return 0;
             }
+
 
             if (isMaximizing) {
                 let bestScore = -Infinity;
                 for (let i = 0; i < 9; i++) {
                     if (board[i].textContent === '') {
                         board[i].textContent = 'O';
-                        let score = minimax(board, depth + 1, false);
+                        let score = minimax(board, depth + 1, false, alpha, beta);
                         board[i].textContent = '';
                         bestScore = Math.max(score, bestScore);
+                        alpha = Math.max(alpha, score);
+                        if (beta <= alpha) {
+                            break;
+                        }
                     }
                 }
                 return bestScore;
             } else {
-                let bestScore = Infinity;
+                let bestScore = -Infinity;
                 for (let i = 0; i < 9; i++) {
                     if (board[i].textContent === '') {
                         board[i].textContent = 'X';
-                        let score = minimax(board, depth + 1, true);
+                        let score = minimax(board, depth + 1, true, alpha, beta);
                         board[i].textContent = '';
-                        bestScore = Math.min(score, bestScore);
+                        bestScore = Math.max(score, bestScore);
+                        if (beta <= alpha) {
+                            break;
+                        }
                     }
                 }
                 return bestScore;
             }
         }
 
-        function checkWinner() {
+
+        function checkWinner(player, board) {
             const winningCombos = [
                 [0, 1, 2],
                 [3, 4, 5],
@@ -289,11 +300,12 @@
                 [2, 4, 6]
             ];
             return winningCombos.some(combo => {
-                return cells[combo[0]].textContent === currentPlayer &&
-                    cells[combo[1]].textContent === currentPlayer &&
-                    cells[combo[2]].textContent === currentPlayer;
+                return board[combo[0]].textContent === player &&
+                    board[combo[1]].textContent === player &&
+                    board[combo[2]].textContent === player;
             });
         }
+
 
         function checkDraw() {
             return [...cells].every(cell => cell.textContent !== '');
