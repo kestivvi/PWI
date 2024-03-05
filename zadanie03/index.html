@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Kółko i Krzyżyk</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="header">
-        <h1>Tic Tac Toe</h1>
+        <h1>Kółko i Krzyżyk</h1>
         <div id="game-mode-selection">
-            <label for="game-mode">Game mode:</label>
+            <label for="game-mode">Tryb gry:</label>
             <select id="game-mode" onchange="onGameModeChange(this.value)">
-                <option value="2players">2 Players</option>
-                <option value="bot-easy">Easy Bot</option>
-                <option value="bot-medium">Medium Bot</option>
-                <option value="bot-hard">Hard Bot</option>
+                <option value="2players">Dwóch graczy</option>
+                <option value="bot-easy">Łatwy Komputer</option>
+                <option value="bot-medium">Średni Komputer</option>
+                <option value="bot-hard">Trudny Komputer</option>
             </select>
-            <button onclick="onGameStart()">Start</button>
+            <button onclick="onGameStart()">Rozpocznij</button>
         </div>
         <div id="end-notification">
-            <p id="end-notification-message">X wins!</p>
-            <button onclick="onGameReset()">Reset</button>
+            <p id="end-notification-message">X wygrywa!</p>
+            <button onclick="onGameReset()">Zrestartuj</button>
         </div>
         <div id="whose-round">
-            <p id="whose-round-message">It's X's turn</p>
+            <p>Teraz kolej na <span id="whose-round-message">X</span></p>
         </div>
     </div>
 

@@ -1,9 +1,5 @@
-function updateWhoIsNext(currentPlayer, bot) {
-    if (gameMode === 'bot' && currentPlayer === 'O') {
-        document.getElementById('whose-round-message').textContent = 'Bot is thinking...';
-    } else {
-        document.getElementById('whose-round-message').textContent = 'It\'s ' + currentPlayer + '\'s turn';
-    }
+function updateWhoIsNext(currentPlayer) {
+    document.getElementById('whose-round-message').textContent = currentPlayer;
 }
 
 function showWhoIsNext() {
@@ -31,11 +27,11 @@ function showEndNotification() {
 }
 
 function showWinner(winner) {
-    document.getElementById('end-notification-message').textContent = winner + ' wins!';
+    document.getElementById('end-notification-message').textContent = winner + ' wygrywa!';
     showEndNotification();
 }
 
 function showDraw() {
-    document.getElementById('end-notification-message').textContent = 'It\'s a draw!';
+    document.getElementById('end-notification-message').textContent = 'Remis!';
     showEndNotification();
 }
