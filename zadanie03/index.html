@@ -5,64 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        .header {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .board {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
-            gap: 2px;
-        }
-
-        .cell {
-            border: 1px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
-            cursor: pointer;
-        }
-
-        #game-mode-selection {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        #end-notification {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.5em;
-        }
-
-        #whose-round {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -71,8 +15,10 @@
         <div id="game-mode-selection">
             <label for="game-mode">Game mode:</label>
             <select id="game-mode" onchange="onGameModeChange(this.value)">
-                <option value="bot">Bot</option>
                 <option value="2players">2 Players</option>
+                <option value="bot-easy">Easy Bot</option>
+                <option value="bot-medium">Medium Bot</option>
+                <option value="bot-hard">Hard Bot</option>
             </select>
             <button onclick="onGameStart()">Start</button>
         </div>
@@ -97,225 +43,13 @@
         <div class="cell" data-index="7"></div>
         <div class="cell" data-index="8"></div>
     </div>
-    <script>
 
-        /////////////////////////
-        // App State
+    <script src="js/app_state.js"></script>
+    <script src="js/game_logic.js"></script>
+    <script src="js/bot.js"></script>
+    <script src="js/ui_management.js"></script>
+    <script src="js/event_handlers.js"></script>
 
-        let currentState = "NOT_STARTED"; // NOT_STARTED, IN_PROGRESS, FINISHED
-        let currentPlayer = 'X';
-        let gameMode = document.getElementById('game-mode').value;
-        const cells = document.querySelectorAll('.cell');
-
-        /////////////////////////
-        // State Management
-
-        // NOT_STARTED -> IN_PROGRESS
-        function startGame() {
-            hideGameModeSelection();
-            showWhoIsNext();
-            currentState = "IN_PROGRESS";
-        }
-
-        // IN_PROGRESS -> FINISHED
-        function endGame(isDraw, winner) {
-            hideWhoIsNext();
-            isDraw ? showDraw() : showWinner(winner)
-            currentState = "FINISHED";
-        }
-
-        // FINISHED -> NOT_STARTED
-        function restartGame() {
-            showGameModeSelection();
-            hideEndNotification();
-            cells.forEach(cell => cell.textContent = '');
-            currentPlayer = 'X';
-            currentState = "NOT_STARTED";
-        }
-
-        /////////////////////////
-        // UI Management
-
-        function updateWhoIsNext(currentPlayer, bot) {
-            if (gameMode === 'bot' && currentPlayer === 'O') {
-                document.getElementById('whose-round-message').textContent = 'Bot is thinking...';
-            } else {
-                document.getElementById('whose-round-message').textContent = 'It\'s ' + currentPlayer + '\'s turn';
-            }
-        }
-
-        function showWhoIsNext() {
-            document.getElementById('whose-round').style.display = 'flex';
-        }
-
-        function hideWhoIsNext() {
-            document.getElementById('whose-round').style.display = 'none';
-        }
-
-        function hideGameModeSelection() {
-            document.getElementById('game-mode-selection').style.display = 'none';
-        }
-
-        function showGameModeSelection() {
-            document.getElementById('game-mode-selection').style.display = 'block';
-        }
-
-        function hideEndNotification() {
-            document.getElementById('end-notification').style.display = 'none';
-        }
-
-        function showEndNotification() {
-            document.getElementById('end-notification').style.display = 'flex';
-        }
-
-        function showWinner(winner) {
-            document.getElementById('end-notification-message').textContent = winner + ' wins!';
-            showEndNotification();
-        }
-
-        function showDraw() {
-            document.getElementById('end-notification-message').textContent = 'It\'s a draw!';
-            showEndNotification();
-        }
-
-        /////////////////////////
-        // Event Handlers
-
-        function onGameModeChange(value) {
-            gameMode = value;
-        }
-
-        function onGameReset() {
-            restartGame();
-        }
-
-        function onGameStart() {
-            startGame();
-        }
-
-        function onBoardCellClick(event) {
-            if (currentState !== "IN_PROGRESS") {
-                return;
-            }
-
-            const cell = event.target;
-            const index = parseInt(cell.getAttribute('data-index'));
-            if (cell.textContent === '') {
-                cell.textContent = currentPlayer;
-                if (checkWinner(currentPlayer, cells)) {
-                    endGame(false, currentPlayer);
-                    return;
-                }
-                if (checkDraw()) {
-                    endGame(true);
-                    return;
-                }
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                updateWhoIsNext(currentPlayer);
-                if (gameMode === 'bot' && currentPlayer === 'O') {
-                    setTimeout(makeBotMove, 100);
-                }
-            }
-        }
-
-        function makeBotMove() {
-            let bestScore = -Infinity;
-            let move;
-            for (let i = 0; i < 9; i++) {
-                if (cells[i].textContent === '') {
-                    cells[i].textContent = 'O';
-                    let score = minimax(cells, 0, false, -Infinity, Infinity);
-                    cells[i].textContent = '';
-                    if (score > bestScore) {
-                        bestScore = score;
-                        move = i;
-                    }
-                }
-            }
-            cells[move].textContent = 'O';
-            if (checkWinner('O', cells)) {
-                endGame(false, 'O');
-                return;
-            }
-            if (checkDraw()) {
-                endGame(true);
-                return;
-            }
-            currentPlayer = 'X';
-            updateWhoIsNext(currentPlayer);
-        }
-
-
-
-        function minimax(board, depth, isMaximizing, alpha, beta) {
-            if (checkWinner(isMaximizing ? 'O' : 'X', board)) {
-                return isMaximizing ? -10 + depth : 10 - depth;
-            } else if (checkDraw()) {
-                return 0;
-            }
-
-
-            if (isMaximizing) {
-                let bestScore = -Infinity;
-                for (let i = 0; i < 9; i++) {
-                    if (board[i].textContent === '') {
-                        board[i].textContent = 'O';
-                        let score = minimax(board, depth + 1, false, alpha, beta);
-                        board[i].textContent = '';
-                        bestScore = Math.max(score, bestScore);
-                        alpha = Math.max(alpha, score);
-                        if (beta <= alpha) {
-                            break;
-                        }
-                    }
-                }
-                return bestScore;
-            } else {
-                let bestScore = -Infinity;
-                for (let i = 0; i < 9; i++) {
-                    if (board[i].textContent === '') {
-                        board[i].textContent = 'X';
-                        let score = minimax(board, depth + 1, true, alpha, beta);
-                        board[i].textContent = '';
-                        bestScore = Math.max(score, bestScore);
-                        if (beta <= alpha) {
-                            break;
-                        }
-                    }
-                }
-                return bestScore;
-            }
-        }
-
-
-        function checkWinner(player, board) {
-            const winningCombos = [
-                [0, 1, 2],
-                [3, 4, 5],
-                [6, 7, 8],
-                [0, 3, 6],
-                [1, 4, 7],
-                [2, 5, 8],
-                [0, 4, 8],
-                [2, 4, 6]
-            ];
-            return winningCombos.some(combo => {
-                return board[combo[0]].textContent === player &&
-                    board[combo[1]].textContent === player &&
-                    board[combo[2]].textContent === player;
-            });
-        }
-
-
-        function checkDraw() {
-            return [...cells].every(cell => cell.textContent !== '');
-        }
-
-        function resetGame() {
-            cells.forEach(cell => cell.textContent = '');
-            currentPlayer = 'X';
-        }
-    </script>
 </body>
 
 </html>
