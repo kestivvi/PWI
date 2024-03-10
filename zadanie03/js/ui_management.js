@@ -15,7 +15,15 @@ function hideGameModeSelection() {
 }
 
 function showGameModeSelection() {
-    document.getElementById('game-mode-selection').style.display = 'block';
+    document.getElementById('game-mode-selection').style.display = 'flex';
+}
+
+function showHumanPlayerSymbolSelection() {
+    document.getElementById('human-player-symbol-selection').style.display = 'block';
+}
+
+function hideHumanPlayerSymbolSelection() {
+    document.getElementById('human-player-symbol-selection').style.display = 'none';
 }
 
 function hideEndNotification() {

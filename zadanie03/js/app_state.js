@@ -1,6 +1,8 @@
 let currentState = "NOT_STARTED"; // NOT_STARTED, IN_PROGRESS, FINISHED
 let currentPlayer = 'X';
 let gameMode = document.getElementById('game-mode').value;
+let humanPlayerSymbol = document.getElementById('human-player-symbol').value;
+let botPlayerSymbol = humanPlayerSymbol === 'X' ? 'O' : 'X';
 const cells = document.querySelectorAll('.cell');
 
 
@@ -25,8 +27,13 @@ function setValueOfCell(cellIndex, value) {
 // NOT_STARTED -> IN_PROGRESS
 function startGame() {
     hideGameModeSelection();
+    updateWhoIsNext(currentPlayer);
     showWhoIsNext();
     currentState = "IN_PROGRESS";
+
+    if (gameMode.startsWith("bot") && currentPlayer === botPlayerSymbol) {
+        setTimeout(() => makeBotMove(gameMode, botPlayerSymbol), 100);
+    }
 }
 
 // IN_PROGRESS -> IN_PROGRESS
@@ -46,8 +53,8 @@ function endTurn() {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     updateWhoIsNext(currentPlayer);
 
-    if (gameMode.startsWith("bot") && currentPlayer === 'O') {
-        setTimeout(() => makeBotMove(gameMode), 100);
+    if (gameMode.startsWith("bot") && currentPlayer === botPlayerSymbol) {
+        setTimeout(() => makeBotMove(gameMode, botPlayerSymbol), 100);
     }
 }
 

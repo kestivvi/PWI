@@ -13,13 +13,24 @@
     <div class="header">
         <h1>Kółko i Krzyżyk</h1>
         <div id="game-mode-selection">
-            <label for="game-mode">Tryb gry:</label>
-            <select id="game-mode" onchange="onGameModeChange(this.value)">
-                <option value="2players">Dwóch graczy</option>
-                <option value="bot-easy">Łatwy Komputer</option>
-                <option value="bot-medium">Średni Komputer</option>
-                <option value="bot-hard">Trudny Komputer</option>
-            </select>
+            <div>
+                <label for="game-mode">Tryb gry:</label>
+                <select id="game-mode" onchange="onGameModeChange(this.value)">
+                    <option value="2players">Dwóch graczy</option>
+                    <option value="bot-easy">Łatwy Komputer</option>
+                    <option value="bot-medium">Średni Komputer</option>
+                    <option value="bot-hard">Trudny Komputer</option>
+                </select>
+            </div>
+
+            <div id="human-player-symbol-selection">
+                <label for="human-player-symbol">Graj jako:</label>
+                <select id="human-player-symbol" onchange="onHumanPlayerSymbolChange(this.value)">
+                    <option value="X">Krzyżyk (X)</option>
+                    <option value="O">Kółko (O)</option>
+                </select>
+            </div>
+
             <button onclick="onGameStart()">Rozpocznij</button>
         </div>
         <div id="end-notification">

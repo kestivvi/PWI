@@ -1,5 +1,15 @@
 function onGameModeChange(value) {
     gameMode = value;
+    if (gameMode === "2players") {
+        hideHumanPlayerSymbolSelection()
+    } else {
+        showHumanPlayerSymbolSelection()
+    }
+}
+
+function onHumanPlayerSymbolChange(value) {
+    humanPlayerSymbol = value;
+    botPlayerSymbol = value === 'X' ? 'O' : 'X';
 }
 
 function onGameReset() {
