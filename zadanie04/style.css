@@ -111,7 +111,6 @@ a:hover {
   justify-content: space-between;
   align-items: center;
 }
-
 #header .header-logo {
   margin: 0;
   font-size: 1.5rem;
@@ -123,27 +122,22 @@ a:hover {
   align-items: flex-end;
   gap: 0.5rem;
 }
-
 #header .header-logo .logo {
   width: 32px;
 }
-
 #header .link {
   padding: 0rem 1rem;
 }
-
 #header .link:hover {
   color: var(--color-accent);
   cursor: pointer;
 }
-
 #header .current-link {
   color: var(--color-accent);
   font-weight: 600;
   position: relative;
+  /* Dot under the active link */
 }
-
-/* Dot under the active link */
 #header .current-link::after {
   content: "";
   display: block;
@@ -169,37 +163,31 @@ a:hover {
   justify-content: space-between;
   align-items: flex-start;
 }
-
 #hero .icon {
   width: 3vw;
 }
-
 #hero .flex-row-align-center {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.1vw;
 }
-
 #hero .hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 #hero .hero-header {
   font-size: 5vw;
   color: var(--color-primary);
   padding-left: 4vw;
 }
-
 #hero .hero-subheader {
   font-size: 2vw;
   color: var(--color-tertiary);
 }
-
-#hero-image {
+#hero #hero-image {
   width: 36vw;
 }
 
@@ -215,7 +203,6 @@ a:hover {
   gap: 2rem;
   margin-top: 2rem;
 }
-
 #hero-links .link {
   padding: 1rem 2rem;
   display: flex;
@@ -228,22 +215,18 @@ a:hover {
   color: var(--color-primary);
   font-weight: 600;
 }
-
 #hero-links .link:hover {
   background-color: #3f8ff6;
   cursor: pointer;
 }
-
 #hero-links .accent-link {
   background-color: var(--color-accent-dark);
 }
-
-.play-button {
+#hero-links .play-button {
   width: 1.5rem;
   filter: invert(1);
 }
-
-.right-arrow {
+#hero-links .right-arrow {
   width: 1.2rem;
   filter: invert(1);
 }
@@ -260,7 +243,6 @@ a:hover {
   align-items: flex-start;
   gap: 3rem;
 }
-
 .features .feature .feature-title {
   text-align: center;
   font-size: 1.5em;
