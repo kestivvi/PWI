@@ -69,6 +69,9 @@ function endGame(isDraw, winner) {
 function restartGame() {
     showGameModeSelection();
     hideEndNotification();
+    if (gameMode !== "2players") {
+        showHumanPlayerSymbolSelection();
+    }
     cells.forEach(cell => cell.textContent = '');
     currentPlayer = 'X';
     currentState = "NOT_STARTED";

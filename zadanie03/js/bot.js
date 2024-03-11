@@ -43,7 +43,7 @@ function getBotMove(board, makeWorstMove = false, botPlayerSymbol) {
     for (let i = 0; i < board.length; i++) {
         if (board[i] === '') {
             board[i] = botPlayerSymbol;
-            const score = minimax(board, 0, false, botPlayerSymbol);
+            const score = minimax(board, 0, false, botPlayerSymbol, makeWorstMove);
             board[i] = '';
 
             if (makeWorstMove && score < bestScore) {
@@ -59,23 +59,23 @@ function getBotMove(board, makeWorstMove = false, botPlayerSymbol) {
     return bestMove;
 }
 
-function minimax(board, depth, isMaximizingPlayer, botPlayerSymbol) {
+function minimax(board, depth, isMaximizingPlayer, botPlayerSymbol, makeWorstMove = false) {
     const result = evaluate(board, botPlayerSymbol);
 
     if (result !== null) {
-        return result * (10 - depth);
+        return result * (20 - depth);
     }
 
     const opponentSymbol = botPlayerSymbol === 'X' ? 'O' : 'X';
 
     if (isMaximizingPlayer) {
-        let maxEval = -Infinity;
+        let maxEval = makeWorstMove ? Infinity : -Infinity;
         for (let i = 0; i < board.length; i++) {
             if (board[i] === '') {
                 board[i] = botPlayerSymbol;
-                const eval = minimax(board, depth + 1, false, botPlayerSymbol);
+                const eval = minimax(board, depth + 1, false, botPlayerSymbol, makeWorstMove);
                 board[i] = '';
-                maxEval = Math.max(maxEval, eval);
+                maxEval = makeWorstMove ? Math.min(maxEval, eval) : Math.max(maxEval, eval);
             }
         }
         return maxEval;
@@ -84,7 +84,7 @@ function minimax(board, depth, isMaximizingPlayer, botPlayerSymbol) {
         for (let i = 0; i < board.length; i++) {
             if (board[i] === '') {
                 board[i] = opponentSymbol;
-                const eval = minimax(board, depth + 1, true, botPlayerSymbol);
+                const eval = minimax(board, depth + 1, true, botPlayerSymbol, makeWorstMove);
                 board[i] = '';
                 minEval = Math.min(minEval, eval);
             }
