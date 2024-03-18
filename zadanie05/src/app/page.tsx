@@ -7,6 +7,7 @@ import laptopIcon from "./img/laptop.png";
 import heroImage from "./img/hero-1024.webp";
 import playButtonIcon from "./img/play-button.svg";
 import rightArrowIcon from "./img/right-arrow.svg";
+import Hero from "./Page/Hero";
 
 
 export default function Home() {
@@ -16,34 +17,7 @@ export default function Home() {
         <div className={styles.shadow_top}></div>
       </div>
 
-      <section className={styles.hero}>
-        <div>
-          <h1 className={`${styles.hero_header} product-font`}>
-            JAVASCRIPT <span className="color-accent">FRAMEWORK</span>
-          </h1>
-          <div className={`${styles.hero_text} mono-font`}>
-            <h2 className={`${styles.hero_subheader} ${styles.flex_row_align_center}`}>
-              <Image className={styles.icon} src={rocketIcon} alt="rocket icon" />
-              Blazingly Fast Dynamic
-            </h2>
-            <h2 className={`${styles.hero_subheader} ${styles.flex_row_align_center}`}>
-              <Image className={styles.icon} src={lightningIcon} alt="lightning icon" />
-              Progressive Adaptive Edge
-            </h2>
-            <h2 className={`${styles.hero_subheader} ${styles.flex_row_align_center}`}>
-              <Image className={styles.icon} src={laptopIcon} alt="laptop icon" />
-              Frontend Powerhouse
-            </h2>
-          </div>
-        </div>
-
-        <div className={styles.hero_image_div}>
-          <div className={styles.shadow_1}></div>
-          <div className={styles.shadow_2}></div>
-          <Image src={heroImage} alt="hero" className={styles.hero_image} />
-        </div>
-
-      </section>
+      <Hero />
 
       <div className={styles.hero_links}>
         <div className={`${styles.link} ${styles.accent_link}`}>
