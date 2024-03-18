@@ -1,13 +1,7 @@
 import styles from "./page.module.css"
-import Image from "next/image";
-
-import rocketIcon from "./img/rocket.webp";
-import lightningIcon from "./img/lightning.webp";
-import laptopIcon from "./img/laptop.png";
-import heroImage from "./img/hero-1024.webp";
-import playButtonIcon from "./img/play-button.svg";
-import rightArrowIcon from "./img/right-arrow.svg";
 import Hero from "./Page/Hero";
+import HeroLinks from "./Page/HeroLinks";
+import Features from "./Page/Features";
 
 
 export default function Home() {
@@ -18,46 +12,9 @@ export default function Home() {
       </div>
 
       <Hero />
+      <HeroLinks />
 
-      <div className={styles.hero_links}>
-        <div className={`${styles.link} ${styles.accent_link}`}>
-          <Image className={styles.play_button} src={playButtonIcon} alt="play button" />
-          Why Moon Lake?
-        </div>
-        <div className={styles.link}>
-          Get Started
-          <Image className={styles.right_arrow} src={rightArrowIcon} alt="right arrow" />
-        </div>
-      </div>
-
-
-      <main>
-
-        <section className={styles.features}>
-          <div className={styles.feature}>
-            <h3 className={`${styles.feature_title} mono-font`}>Adaptable</h3>
-            <p>
-              Elevate your projects with a framework that boasts unparalleled adaptability, effortlessly
-              accommodating diverse requirements and scaling with your ambitions.
-            </p>
-          </div>
-          <div className={styles.feature}>
-            <h3 className={`${styles.feature_title} mono-font`}>Performant</h3>
-            <p>
-              Efficiently streamline your development process with a framework that prioritizes optimal
-              performance, ensuring swift and responsive user experiences.
-            </p>
-          </div>
-          <div className={styles.feature}>
-            <h3 className={`${styles.feature_title} mono-font`}>Versatile</h3>
-            <p>
-              Unleash the power of simplicity and versatility as our framework empowers you to build dynamic,
-              feature-rich applications with ease.
-            </p>
-          </div>
-        </section>
-
-      </main>
+      <Features />
     </>
   );
 }
