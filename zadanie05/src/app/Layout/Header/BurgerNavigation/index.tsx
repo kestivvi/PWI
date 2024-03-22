@@ -5,6 +5,7 @@ import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
 import { useState } from "react";
 import styles from "./styles.module.css";
+import NavButton from "./NavButton";
 
 export default function BurgerNavigation() {
   const [visibleTop, setVisibleTop] = useState(false);
@@ -32,17 +33,16 @@ export default function BurgerNavigation() {
         position="top"
         onHide={() => setVisibleTop(false)}
         style={{
-          height: '80vh',
-
+          height: 'fit-content',
+          backgroundColor: 'var(--color-bg)',
         }}
         header={<h2>Navigation</h2>}
       >
         <ul className={styles.nav_list}>
-          <Link href="/" onClick={closeSidebar}><Button label="Home" link /></Link>
-          <Link href="/docs" onClick={closeSidebar}><Button label="Docs" link /></Link>
-          <Link href="/blog" onClick={closeSidebar}><Button label="Blog" link /></Link>
-          <Link href="/about" onClick={closeSidebar}><Button label="About" link /></Link>
-          <Link href="/contact" onClick={closeSidebar}><Button label="Contact" link /></Link>
+          <NavButton href="/" label="Home" closeSidebar={closeSidebar} />
+          <NavButton href="/docs" label="Docs" closeSidebar={closeSidebar} />
+          <NavButton href="/blog" label="Blog" closeSidebar={closeSidebar} />
+          <NavButton href="/about" label="About" closeSidebar={closeSidebar} />
         </ul>
       </Sidebar>
     </>
