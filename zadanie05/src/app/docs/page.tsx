@@ -9,7 +9,7 @@ export default function Page() {
             </p>
             <h2 className={styles.header}>Getting Started</h2>
             <p>
-                To get started with our framework, you'll need to install it using npm or yarn. Once installed, you can create a new project and start building your application using our intuitive API and component system.
+                To get started with our framework, you&apos;ll need to install it using npm or yarn. Once installed, you can create a new project and start building your application using our intuitive API and component system.
             </p>
             <h2 className={styles.header}>Features</h2>
             <p>

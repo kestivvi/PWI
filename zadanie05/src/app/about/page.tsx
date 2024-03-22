@@ -19,7 +19,7 @@ export default function Page() {
                 <li>Seamless integration with popular tools and libraries</li>
             </ul>
             <p>
-                Whether you're a beginner or an experienced developer, our Imaginary JS Framework is the perfect choice for your next web project. Try it out today and experience the power of modern web development!
+                Whether you&apos;re a beginner or an experienced developer, our Imaginary JS Framework is the perfect choice for your next web project. Try it out today and experience the power of modern web development!
             </p>
         </main>
     );
