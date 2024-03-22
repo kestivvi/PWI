@@ -31,7 +31,7 @@ export default function Hero() {
       <div className={styles.hero_image_div}>
         <div className={styles.shadow_1}></div>
         <div className={styles.shadow_2}></div>
-        <Image src={heroImage} alt="hero" className={styles.hero_image} />
+        <Image src={heroImage} alt="hero" className={styles.hero_image} priority />
       </div>
 
     </section>
