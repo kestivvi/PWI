@@ -1,9 +1,11 @@
 .header {
     min-height: 3rem;
 
+    z-index: 100;
+
     padding-top: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     display: flex;
     flex-direction: row;
@@ -11,12 +13,6 @@
     align-items: center;
 }
 
-@media (max-width: 700px) {
-    .header {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
 
 .header .header_logo {
     margin: 0;

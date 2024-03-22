@@ -7,9 +7,9 @@ import Features from "./Page/Features";
 export default function Home() {
   return (
     <>
-      <div className={styles.bg_cover}>
+      {/* <div className={styles.bg_cover}>
         <div className={styles.shadow_top}></div>
-      </div>
+      </div> */}
 
       <Hero />
       <HeroLinks />

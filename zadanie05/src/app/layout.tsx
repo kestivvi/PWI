@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 import "./Layout/normalize.css"
 import "./Layout/globals.css";
-// import "./style.css"
-import Image from "next/image";
-import logo from "./img/logo-256.webp";
-import Link from "next/link";
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
+import Providers from './Layout/Providers/index';
+
 
 export const metadata: Metadata = {
   title: "Moon Lake",
@@ -45,11 +42,11 @@ export default function RootLayout({
         {/* <link rel="icon" href="img/favicon.ico" /> */}
       </head>
       <body>
-        <Header />
-
-        {children}
-
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/img/logo-256.webp";
 import styles from "./styles.module.css";
+import BurgerNavigation from "./BurgerNavigation";
 
 export default function Header() {
   return (
@@ -24,7 +25,7 @@ export default function Header() {
 
         {/* TODO: Make burger component */}
         <div className={styles.navigation_burger}>
-          Burger
+          <BurgerNavigation />
         </div>
       </nav>
 
