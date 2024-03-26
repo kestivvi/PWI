@@ -8,6 +8,12 @@
     text-align: justify;
 }
 
+@media (max-width: 480px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
 .header {
     color: var(--color-primary);
 }

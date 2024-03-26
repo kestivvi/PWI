@@ -9,3 +9,9 @@
     align-items: center;
     gap: 1rem;
 }
+
+@media (max-width: 480px) {
+    .footer {
+        font-size: 0.9em;
+    }
+}
