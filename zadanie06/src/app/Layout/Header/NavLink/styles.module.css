@@ -1,0 +1,27 @@
+.link {
+    padding: 0rem 1rem;
+}
+
+.link:hover {
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+.current_link {
+    color: var(--color-accent);
+    font-weight: 600;
+    position: relative;
+}
+
+/* Dot under the active link */
+.current_link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 35px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}

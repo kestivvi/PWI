@@ -1,0 +1,9 @@
+.main {
+    padding: 2rem 3rem;
+    margin: auto;
+    text-align: justify;
+}
+
+.header {
+    color: var(--color-primary);
+}

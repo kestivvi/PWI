@@ -1,0 +1,44 @@
+.hero_links {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero_links .link {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #223;
+    border-radius: 50px;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.hero_links .link:hover {
+    background-color: #3f8ff6;
+    cursor: pointer;
+}
+
+.hero_links .accent_link {
+    background-color: var(--color-accent-dark);
+}
+
+.hero_links .play_button {
+    width: 1.5rem;
+    height: auto;
+    filter: invert(1);
+}
+
+.hero_links .right_arrow {
+    width: 1.2rem;
+    height: auto;
+    filter: invert(1);
+}

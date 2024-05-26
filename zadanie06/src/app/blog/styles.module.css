@@ -1,0 +1,19 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+
+    padding: 2rem;
+    margin: auto;
+    text-align: justify;
+}
+
+@media (max-width: 480px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header {
+    color: var(--color-primary);
+}

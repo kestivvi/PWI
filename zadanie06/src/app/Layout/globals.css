@@ -1,0 +1,70 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/******************************************/
+/* GLOBAL DEFINITIONS */
+/******************************************/
+:root {
+    --color-primary: #DADADA;
+    --color-bg: #001;
+    --color-bg-light: #0B0B1C;
+    --color-tertiary: #CCC;
+    --color-accent: #539ff6;
+    --color-accent-dark: #285cbf;
+    --color-text: #777;
+    --primary-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --mono-font: "Kode Mono", monospace;
+    --product-font: "Spectral", serif;
+    --small-space: 8px;
+    --medium-space: 16px;
+    --large-space: 24px;
+}
+
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/******************************************/
+/* UTILITY CLASSES */
+/******************************************/
+.color-accent {
+    color: var(--color-accent);
+}
+
+.product-font {
+    font-family: var(--product-font);
+    font-weight: 800;
+    font-style: italic;
+}
+
+.mono-font {
+    font-family: var(--mono-font);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inline-block {
+    display: inline-block;
+}
