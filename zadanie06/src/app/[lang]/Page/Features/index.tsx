@@ -1,29 +1,31 @@
-import styles from "./styles.module.css"
+"use client";
+
+import { useDictionary } from "@/dictionary";
+import styles from "./styles.module.css";
 
 export default function Features() {
+  const d = useDictionary();
+
   return (
     <section className={styles.features}>
       <div className={styles.feature}>
-        <h3 className={`${styles.feature_title} mono-font`}>Adaptable</h3>
-        <p>
-          Elevate your projects with a framework that boasts unparalleled adaptability, effortlessly
-          accommodating diverse requirements and scaling with your ambitions.
-        </p>
+        <h3 className={`${styles.feature_title} mono-font`}>
+          {d("home-features-1")}
+        </h3>
+        <p>{d("home-features-1-body")}</p>
       </div>
       <div className={styles.feature}>
-        <h3 className={`${styles.feature_title} mono-font`}>Performant</h3>
-        <p>
-          Efficiently streamline your development process with a framework that prioritizes optimal
-          performance, ensuring swift and responsive user experiences.
-        </p>
+        <h3 className={`${styles.feature_title} mono-font`}>
+          {d("home-features-2")}
+        </h3>
+        <p>{d("home-features-2-body")}</p>
       </div>
       <div className={styles.feature}>
-        <h3 className={`${styles.feature_title} mono-font`}>Versatile</h3>
-        <p>
-          Unleash the power of simplicity and versatility as our framework empowers you to build dynamic,
-          feature-rich applications with ease.
-        </p>
+        <h3 className={`${styles.feature_title} mono-font`}>
+          {d("home-features-3")}
+        </h3>
+        <p>{d("home-features-3-body")}</p>
       </div>
     </section>
-  )
+  );
 }

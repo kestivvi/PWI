@@ -1,10 +1,15 @@
+"use client";
+
 import styles from "./styles.module.css";
 import Image from "next/image";
 import playButtonIcon from "@/app/img/play-button.svg";
 import rightArrowIcon from "@/app/img/right-arrow.svg";
 import Link from "next/link";
+import { useDictionary } from "@/dictionary";
 
 export default function HeroLinks() {
+  const d = useDictionary();
+
   return (
     <div className={styles.hero_links}>
       <Link href="/about">
@@ -14,12 +19,12 @@ export default function HeroLinks() {
             src={playButtonIcon}
             alt="play button"
           />
-          Why Moon Lake?
+          {d("hero-links-why-moon-lake")}
         </div>
       </Link>
       <Link href="/docs">
         <div className={styles.link}>
-          Get Started
+          {d("hero-links-get-started")}
           <Image
             className={styles.right_arrow}
             src={rightArrowIcon}
