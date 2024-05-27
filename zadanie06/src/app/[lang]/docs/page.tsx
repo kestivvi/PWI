@@ -1,27 +1,26 @@
+"use client";
+
+import { useDictionary } from "@/dictionary";
 import styles from "./styles.module.css";
 
 export default function Page() {
-    return (
-        <main className={styles.main}>
-            <h2 className={styles.header}>Introduction</h2>
-            <p>
-                Welcome to the documentation for our imaginary JavaScript framework! This framework is designed to simplify the process of building web applications by providing a set of powerful tools and abstractions.
-            </p>
-            <h2 className={styles.header}>Getting Started</h2>
-            <p>
-                To get started with our framework, you&apos;ll need to install it using npm or yarn. Once installed, you can create a new project and start building your application using our intuitive API and component system.
-            </p>
-            <h2 className={styles.header}>Features</h2>
-            <p>
-                Our framework comes with a wide range of features to help you build modern and performant web applications. Some of the key features include:
-            </p>
-            <ul>
-                <li>Component-based architecture</li>
-                <li>State management</li>
-                <li>Routing</li>
-                <li>Form handling</li>
-                <li>Server-side rendering</li>
-            </ul>
-        </main>
-    );
+  const d = useDictionary();
+
+  return (
+    <main className={styles.main}>
+      <h2 className={styles.header}>{d("docs-introduction-header")}</h2>
+      <p>{d("docs-introduction-body")}</p>
+      <h2 className={styles.header}>{d("docs-getting-started-header")}</h2>
+      <p>{d("docs-getting-started-body")}</p>
+      <h2 className={styles.header}>{d("docs-features-header")}</h2>
+      <p>{d("docs-features-body")}</p>
+      <ul>
+        <li>{d("docs-features-1")}</li>
+        <li>{d("docs-features-2")}</li>
+        <li>{d("docs-features-3")}</li>
+        <li>{d("docs-features-4")}</li>
+        <li>{d("docs-features-5")}</li>
+      </ul>
+    </main>
+  );
 }

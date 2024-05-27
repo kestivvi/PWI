@@ -35,6 +35,57 @@ const dictionary: Dictionary = {
     "Ikony piorunów od Freepik - Flaticon",
   "footer-attribution-laptop-icons-by-vectors-market":
     "Ikony laptopów od Vectors Market - Flaticon",
+  "docs-introduction-header": "Wprowadzenie",
+  "docs-introduction-body":
+    "Witamy w dokumentacji naszego fikcyjnego frameworka JavaScript! Ten framework ma na celu uproszczenie procesu budowania aplikacji internetowych poprzez dostarczenie zestawu potężnych narzędzi i abstrakcji.",
+  "docs-getting-started-header": "Pierwsze kroki",
+  "docs-getting-started-body":
+    "Aby rozpocząć pracę z naszym frameworkiem, musisz zainstalować go za pomocą npm lub yarn. Po zainstalowaniu możesz utworzyć nowy projekt i zacząć budować swoją aplikację, korzystając z naszego intuicyjnego API i systemu komponentów.",
+  "docs-features-header": "Funkcje",
+  "docs-features-body":
+    "Nasz framework oferuje szeroki zakres funkcji, które pomogą Ci budować nowoczesne i wydajne aplikacje internetowe. Niektóre z kluczowych funkcji to:",
+  "docs-features-1": "Architektura oparta na komponentach",
+  "docs-features-2": "Zarządzanie stanem",
+  "docs-features-3": "Routing",
+  "docs-features-4": "Obsługa formularzy",
+  "docs-features-5": "Renderowanie po stronie serwera",
+  "blog-article-1-title": "Wprowadzenie Moon Lake",
+  "blog-article-1-content":
+    "Moon Lake to rewolucyjny framework JavaScript, który zmieni sposób, w jaki tworzysz aplikacje internetowe.",
+  "blog-article-1-author": "John Doe",
+  "blog-article-2-title": "Opanowanie Moon Lake z TS",
+  "blog-article-2-content":
+    "Dowiedz się, jak wykorzystać moc TypeScript z Moon Lake do tworzenia solidnych i skalowalnych aplikacji.",
+  "blog-article-2-author": "Jane Smith",
+  "blog-article-3-title": "Eksplorowanie głębin Moon Lake",
+  "blog-article-3-content":
+    "Zanurz się w podstawowe koncepcje Moon Lake i zrozum, jak działa pod maską.",
+  "blog-article-3-author": "John Doe",
+  "blog-article-4-title": "Moon Lake kontra inne frameworki JS",
+  "blog-article-4-content":
+    "Porównawcze studium Moon Lake z innymi popularnymi frameworkami JavaScript.",
+  "blog-article-4-author": "Jane Smith",
+  "blog-article-5-title": "Pierwsze kroki z Moon Lake",
+  "blog-article-5-content":
+    "Przewodnik dla początkujących po budowaniu pierwszej aplikacji z Moon Lake.",
+  "blog-article-5-author": "John Doe",
+  "blog-article-6-title": "Zaawansowane techniki w Moon Lake",
+  "blog-article-6-content":
+    "Odkryj zaawansowane techniki i najlepsze praktyki, aby w pełni wykorzystać Moon Lake.",
+  "blog-article-6-author": "Jane Smith",
+  "about-header-1": "O naszym frameworku JavaScript Moon Lake",
+  "about-body-1":
+    "Nasz fikcyjny framework JS to potężny i elastyczny framework JavaScript zaprojektowany w celu uproszczenia tworzenia stron internetowych. Dzięki intuicyjnemu API i obszernej gamie funkcji, umożliwia deweloperom budowanie solidnych i skalowalnych aplikacji z łatwością.",
+  "about-header-2": "Dlaczego wybrać nasz framework?",
+  "about-body-2-1": "Nasz framework oferuje szereg korzyści, w tym:",
+  "about-body-2-li-1": "Efektywny i wydajny kod",
+  "about-body-2-li-2": "Modularna architektura dla łatwej organizacji kodu",
+  "about-body-2-li-3": "Bogaty zestaw wbudowanych komponentów i narzędzi",
+  "about-body-2-li-4": "Obszerna dokumentacja i wsparcie społeczności",
+  "about-body-2-li-5":
+    "Bezproblemowa integracja z popularnymi narzędziami i bibliotekami",
+  "about-body-2-2":
+    "Niezależnie od tego, czy jesteś początkującym, czy doświadczonym programistą, nasz fikcyjny framework JS jest doskonałym wyborem na Twój kolejny projekt internetowy. Wypróbuj go już dziś i doświadcz mocy nowoczesnego tworzenia stron internetowych!",
 };
 
 export default dictionary;
