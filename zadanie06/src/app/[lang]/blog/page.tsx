@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./styles.module.css";
 import { Card } from "primereact/card";
 import { useDictionary } from "@/dictionary";
 import { Dictionary } from "@/dictionary/types";
+import CustomLink from "@/components/CustomLink";
 
 export default function Page() {
   const d = useDictionary();
@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       {articles.map((article, index) => (
-        <Link key={article.title} href={`/blog/${article.title}`}>
+        <CustomLink key={article.title} href={`/blog/${article.title}`}>
           <Card
             key={index}
             title={article.title}
@@ -29,7 +29,7 @@ export default function Page() {
           >
             <p>{article.content}</p>
           </Card>
-        </Link>
+        </CustomLink>
       ))}
     </main>
   );
