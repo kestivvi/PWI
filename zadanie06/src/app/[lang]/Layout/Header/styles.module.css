@@ -35,6 +35,13 @@
     display: none;
 }
 
+.header .navigation_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 @media (max-width: 700px) {
     .header .navigation_list {
         display: none;

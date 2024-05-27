@@ -7,6 +7,7 @@ import BurgerNavigation from "./BurgerNavigation";
 import NavLink from "./NavLink";
 import { useDictionary } from "@/dictionary";
 import CustomLink from "@/components/CustomLink";
+import AlternativeLanguageButton from "./AlternativeLanguageButton";
 
 export default function Header() {
   const d = useDictionary();
@@ -26,6 +27,7 @@ export default function Header() {
           <NavLink href="/docs">{d("navigation-docs")}</NavLink>
           <NavLink href="/blog">{d("navigation-blog")}</NavLink>
           <NavLink href="/about">{d("navigation-about")}</NavLink>
+          <AlternativeLanguageButton />
         </div>
 
         <div className={styles.navigation_burger}>
