@@ -5,15 +5,12 @@ import styles from "./styles.module.css";
 import { useDictionary } from "@/dictionary";
 
 const CookieBanner = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const d = useDictionary();
 
   useEffect(() => {
     const isBannerSeen = localStorage.getItem("cookieBannerSeen");
-
-    if (!isBannerSeen) {
-      setIsVisible(true);
-    }
+    if (isVisible !== !isBannerSeen) setIsVisible(!isBannerSeen);
   }, []);
 
   const handleAccept = () => {
