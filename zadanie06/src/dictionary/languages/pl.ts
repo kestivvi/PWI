@@ -86,6 +86,9 @@ const dictionary: Dictionary = {
     "Bezproblemowa integracja z popularnymi narzędziami i bibliotekami",
   "about-body-2-2":
     "Niezależnie od tego, czy jesteś początkującym, czy doświadczonym programistą, nasz fikcyjny framework JS jest doskonałym wyborem na Twój kolejny projekt internetowy. Wypróbuj go już dziś i doświadcz mocy nowoczesnego tworzenia stron internetowych!",
+  "cookies-banner-text":
+    "Cenimy Twoją prywatność. Zgodnie z przepisami UE informujemy, że nasza strona internetowa nie korzysta z żadnych plików cookie. Nie zbieramy ani nie przechowujemy żadnych danych osobowych za pomocą plików cookie lub podobnych technologii. Możesz przeglądać naszą stronę z pełnym zaufaniem, wiedząc, że Twoja prywatność jest w pełni chroniona.",
+  "cookies-banner-button": "Rozumiem",
 };
 
 export default dictionary;

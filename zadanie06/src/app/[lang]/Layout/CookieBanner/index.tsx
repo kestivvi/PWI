@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { useDictionary } from "@/dictionary";
 
 const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const d = useDictionary();
 
   useEffect(() => {
     const isBannerSeen = localStorage.getItem("cookieBannerSeen");
@@ -25,15 +27,9 @@ const CookieBanner = () => {
 
   return (
     <div className={styles.cookieBanner}>
-      <p>
-        We value your privacy. In compliance with EU regulations, we inform you
-        that our website does not use any cookies. We do not collect or store
-        any personal data through cookies or similar technologies. You can
-        browse our site with confidence, knowing that your privacy is fully
-        protected.
-      </p>
+      <p>{d("cookies-banner-text")}</p>
       <button className={styles.cookieBannerButton} onClick={handleAccept}>
-        I understand
+        {d("cookies-banner-button")}
       </button>
     </div>
   );

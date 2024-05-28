@@ -63,4 +63,6 @@ export type Dictionary = {
   "about-body-2-li-4": string;
   "about-body-2-li-5": string;
   "about-body-2-2": string;
+  "cookies-banner-text": string;
+  "cookies-banner-button": string;
 };

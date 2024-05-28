@@ -85,6 +85,9 @@ const dictionary: Dictionary = {
   "about-body-2-li-5": "Seamless integration with popular tools and libraries",
   "about-body-2-2":
     "Whether you&apos;re a beginner or an experienced developer, our Imaginary JS Framework is the perfect choice for your next web project. Try it out today and experience the power of modern web development!",
+  "cookies-banner-text":
+    "We value your privacy. In compliance with EU regulations, we inform you that our website does not use any cookies. We do not collect or store any personal data through cookies or similar technologies. You can browse our site with confidence, knowing that your privacy is fully protected.",
+  "cookies-banner-button": "I understand",
 };
 
 export default dictionary;
