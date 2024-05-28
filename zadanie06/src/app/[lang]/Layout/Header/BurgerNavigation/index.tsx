@@ -6,6 +6,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import NavButton from "./NavButton";
 import { useDictionary } from "@/dictionary";
+import AlternativeLanguageButton from "../AlternativeLanguageButton";
 
 export default function BurgerNavigation() {
   const [visibleTop, setVisibleTop] = useState(false);
@@ -60,6 +61,7 @@ export default function BurgerNavigation() {
             label={d("navigation-about")}
             closeSidebar={closeSidebar}
           />
+          <AlternativeLanguageButton />
         </ul>
       </Sidebar>
     </>
