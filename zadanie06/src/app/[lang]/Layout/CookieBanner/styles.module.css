@@ -1,0 +1,27 @@
+.cookieBanner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000011;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(83, 159, 246, 0.2666666667);
+}
+
+.cookieBannerButton {
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  padding: 0.75rem 1.5rem;
+  background-color: #223;
+  border-radius: 50px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+
+.cookieBannerButton:hover {
+    background-color: #3f8ff6;
+}
