@@ -10,7 +10,7 @@ const dictionary: Dictionary = {
   "hero-links-why-moon-lake": "Dlaczego Moon Lake?",
   "hero-links-get-started": "Zacznij tutaj",
   "hero-phrases-blazingly-fast-dynamic": "Niesamowicie szybki dynamiczny",
-  "hero-phrases-progressive-adaptive-edge": "Postępowy adaptacyjny krawędziowy",
+  "hero-phrases-progressive-adaptive-edge": "Postępowy adaptacyjny pionierski",
   "hero-phrases-front-end-powerhouse": "Potęga frontendu",
   "home-features-1": "Dostosowalny",
   "home-features-1-body":
