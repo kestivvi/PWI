@@ -11,7 +11,7 @@ const CookieBanner = () => {
   useEffect(() => {
     const isBannerSeen = localStorage.getItem("cookieBannerSeen");
     if (isVisible !== !isBannerSeen) setIsVisible(!isBannerSeen);
-  }, []);
+  }, [isVisible, setIsVisible]);
 
   const handleAccept = () => {
     localStorage.setItem("cookieBannerSeen", "true");
