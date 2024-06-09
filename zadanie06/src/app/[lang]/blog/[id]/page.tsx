@@ -5,6 +5,7 @@ import { useDictionary } from "@/dictionary";
 import { Dictionary } from "@/dictionary/types";
 import CustomLink from "@/components/CustomLink";
 import { useParams } from "next/navigation";
+import hashIt from "hash-it";
 import styles from "./styles.module.css";
 
 export default function Page() {
@@ -23,7 +24,7 @@ export default function Page() {
       <p className={styles.author}>{author}</p>
       <p className={styles.content}>
         {fullContent.split("\n").map((text) => (
-          <p>{text}</p>
+          <p key={hashIt(text)}>{text}</p>
         ))}
       </p>
     </main>
