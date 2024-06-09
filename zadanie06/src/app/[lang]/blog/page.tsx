@@ -10,6 +10,7 @@ export default function Page() {
   const d = useDictionary();
 
   const articles = Array.from({ length: 6 }, (_, i) => ({
+    id: i + 1,
     title: d(`blog-article-${i + 1}-title` as keyof Dictionary),
     content: d(`blog-article-${i + 1}-content` as keyof Dictionary),
     author: d(`blog-article-${i + 1}-author` as keyof Dictionary),
@@ -18,7 +19,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       {articles.map((article, index) => (
-        <CustomLink key={article.title} href={`/blog/${article.title}`}>
+        <CustomLink key={article.title} href={`/blog/${article.id}`}>
           <Card
             key={index}
             title={article.title}

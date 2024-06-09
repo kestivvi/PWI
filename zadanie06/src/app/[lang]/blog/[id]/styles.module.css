@@ -1,0 +1,22 @@
+.main {
+    margin: 4rem 8rem;
+}
+
+@media (max-width: 700px) {
+    .main {
+        margin: 4rem 1rem;
+    }
+}
+
+.title {
+    color: var(--color-primary);
+}
+
+.author {
+    font-weight: 500;
+}
+
+.content {
+    color: var(--color-text);
+    text-align: justify;
+}
